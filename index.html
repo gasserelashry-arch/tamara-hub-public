@@ -848,16 +848,16 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 50px;
+      height: 28px;
       z-index: 2;
       background-color: #36212A;
-      /* 100% exact user-provided Greek strip — no redraw */
-      background-image: url('assets/greek-meander-user-exact.png?v=user1');
+      /* user photo pattern — smaller fit, sharpened bronze shine */
+      background-image: url('assets/greek-meander-user-exact.png?v=fit2');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center top;
-      filter: none;
-      box-shadow: none;
+      filter: contrast(1.08) saturate(1.12) brightness(1.06);
+      box-shadow: 0 1px 0 rgba(230,166,118,0.35);
     }
     html[data-theme="light"] .greek-meander-light-bottom {
       display: block !important;
@@ -875,15 +875,15 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 50px;
+      height: 28px;
       z-index: 2;
       background-color: #36212A;
-      background-image: url('assets/greek-meander-user-exact.png?v=user1');
+      background-image: url('assets/greek-meander-user-exact.png?v=fit2');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center bottom;
-      filter: none;
-      box-shadow: none;
+      filter: contrast(1.08) saturate(1.12) brightness(1.06);
+      box-shadow: 0 -1px 0 rgba(230,166,118,0.35);
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
     html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
