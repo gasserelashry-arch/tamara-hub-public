@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="900" viewBox="0 0 140 900" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="shaft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d9cbb8"/>
+      <stop offset="35%" stop-color="#efe4d4"/>
+      <stop offset="50%" stop-color="#f7f1e8"/>
+      <stop offset="65%" stop-color="#efe4d4"/>
+      <stop offset="100%" stop-color="#d9cbb8"/>
+    </linearGradient>
+    <linearGradient id="goldcap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4b06a"/>
+      <stop offset="100%" stop-color="#a67c3d"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="70" width="104" height="740" rx="4" fill="url(#shaft)" opacity="0.9"/>
+  <path d="M28 70v740M42 70v740M56 70v740M70 70v740M84 70v740M98 70v740" stroke="#c4b49a" stroke-opacity="0.55" stroke-width="3"/>
+  <rect x="8" y="40" width="124" height="36" rx="3" fill="url(#goldcap)" opacity="0.75"/>
+  <rect x="8" y="800" width="124" height="40" rx="3" fill="url(#goldcap)" opacity="0.75"/>
+</svg>

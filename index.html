@@ -796,7 +796,7 @@
     }
     .container { max-width: 1480px; margin: 0 auto; position: relative; z-index: 1; }
 
-    /* === Exact photo match v1 — light + dark plates from approved photos === */
+    /* === Designed Greek stage (CSS/SVG only — NEVER embed mockup photos) === */
     #atlas-greek-stage {
       position: fixed;
       inset: 0;
@@ -804,90 +804,101 @@
       pointer-events: none;
       overflow: hidden;
       background-color: #07030d;
-      background-image: url('assets/atlas-match-dark.jpg?v=m1');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 50% 40%, rgba(83,0,186,0.18), transparent 70%),
+        linear-gradient(125deg, transparent 40%, rgba(197,160,89,0.06) 48%, transparent 55%),
+        linear-gradient(35deg, transparent 50%, rgba(197,160,89,0.05) 58%, transparent 66%);
     }
     html[data-theme="dark"] body { background-color: #07030d; background-image: none; }
-    #atlas-greek-stage::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 58% 55% at 50% 48%, rgba(7,3,13,0.42) 0%, rgba(7,3,13,0.18) 50%, transparent 78%);
-      pointer-events: none;
-    }
+    #atlas-greek-stage::after { content: none; display: none; }
 
     html[data-theme="light"] #atlas-greek-stage {
       display: block;
       background-color: #efe4d4;
-      background-image: url('assets/atlas-match-light.jpg?v=m1');
-    }
-    html[data-theme="light"] #atlas-greek-stage::after {
-      background: radial-gradient(ellipse 60% 58% at 50% 46%, rgba(250,246,240,0.72) 0%, rgba(250,246,240,0.35) 55%, transparent 82%);
+      background-image:
+        radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255,252,247,0.55), transparent 72%),
+        linear-gradient(118deg, transparent 42%, rgba(197,160,89,0.08) 50%, transparent 58%);
     }
     html[data-theme="light"] body { background-color: #efe4d4; background-image: none; }
 
-    /* Exact cropped Greek strips from photos (upper + lower) */
+    /* Crisp SVG Greek rails (designed, not photo crops) */
     html[data-theme="light"] #atlas-greek-stage::before,
     html[data-theme="dark"] #atlas-greek-stage::before {
       content: '';
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 36px;
+      height: 28px;
       z-index: 2;
       background-color: #050510;
-      background-image: url('assets/match-banner-dark-top.jpg?v=m1');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-image: url('assets/greek-meander-navy-gold.svg?v=design2');
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
       background-position: center top;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-    }
-    html[data-theme="light"] #atlas-greek-stage::before {
-      background-image: url('assets/match-banner-light-top.jpg?v=m1');
     }
     html[data-theme="light"] .greek-meander-light-bottom,
     html[data-theme="dark"] .greek-meander-dark-bottom {
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 36px;
+      height: 28px;
       z-index: 2;
       background-color: #050510;
-      background-image: url('assets/match-banner-dark-bot.jpg?v=m1');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-image: url('assets/greek-meander-navy-gold.svg?v=design2');
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
       background-position: center bottom;
-    }
-    html[data-theme="light"] .greek-meander-light-bottom {
-      background-image: url('assets/match-banner-light-bot.jpg?v=m1');
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
     html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
 
-    /* Light Atlas header — dark navy like photo 1 (gold branding sits on it) */
-    html[data-theme="light"] .top-nav {
-      background: linear-gradient(180deg, #0a0a18 0%, #050510 45%, #0c0c1a 100%) !important;
-      border: 1.5px solid rgba(197, 160, 89, 0.55) !important;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.28) !important;
-      padding-top: 14px !important;
+    /* Designed columns + laurels */
+    #atlas-greek-stage .greek-column {
+      display: block !important;
+      position: absolute;
+      top: 48px;
+      bottom: 48px;
+      width: min(110px, 10vw);
+      opacity: 0.55;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
     }
-    html[data-theme="light"] .top-nav::before {
-      content: none !important;
-      display: none !important;
-      height: 0 !important;
+    #atlas-greek-stage .greek-column-left { left: 4px; background-image: url('assets/greek-column-dark.svg'); }
+    #atlas-greek-stage .greek-column-right { right: 4px; background-image: url('assets/greek-column-dark.svg'); transform: scaleX(-1); }
+    html[data-theme="light"] #atlas-greek-stage .greek-column-left,
+    html[data-theme="light"] #atlas-greek-stage .greek-column-right {
+      background-image: url('assets/greek-column-light.svg');
+      opacity: 0.7;
     }
+    #atlas-greek-stage .greek-corner {
+      display: block !important;
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      opacity: 0.8;
+      background-image: url('assets/greek-laurel.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #atlas-greek-stage .greek-corner-tl,
+    #atlas-greek-stage .greek-corner-tr { display: none !important; }
+    #atlas-greek-stage .greek-corner-bl { bottom: 36px; left: 18px; }
+    #atlas-greek-stage .greek-corner-br { bottom: 36px; right: 18px; transform: scaleX(-1); }
+    #atlas-greek-stage .greek-veins,
+    #atlas-greek-stage .greek-meander { display: none !important; }
 
-    /* Dark Atlas header — match photo 2 dark navy bar */
+    /* Tool banner — designed navy (not a pasted photo) */
+    html[data-theme="light"] .top-nav,
     html[data-theme="dark"] .top-nav {
-      background: linear-gradient(180deg, #0a0a18 0%, #050510 50%, #0c0c1a 100%) !important;
+      background: linear-gradient(180deg, #12121f 0%, #050510 50%, #0c0c18 100%) !important;
       border: 1.5px solid rgba(197, 160, 89, 0.5) !important;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.55) !important;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.4) !important;
       padding-top: 14px !important;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
     }
+    html[data-theme="light"] .top-nav::before,
     html[data-theme="dark"] .top-nav::before {
       content: none !important;
       display: none !important;
@@ -960,7 +971,7 @@
       font-weight: 800;
     }
 
-    #atlas-greek-stage > *:not(.greek-meander-light-bottom):not(.greek-meander-dark-bottom) { display: none !important; }
+    /* keep designed children visible (columns/laurels/rails) */
     /* === end Greek stage === */
 
     /* Top Nav */
