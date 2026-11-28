@@ -848,12 +848,12 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 30px;
+      height: 28px;
       z-index: 2;
-      background-color: #050508;
-      background-image: url('assets/greek-meander-dark-bronze.svg?v=conn3');
-      background-repeat: repeat-x;
-      background-size: 24px 30px; /* tighter connected keys */
+      background-color: #0a0608;
+      background-image: url('assets/greek-meander-dark-photo.png?v=photo1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center top;
     }
     html[data-theme="light"] .greek-meander-light-bottom {
@@ -872,12 +872,12 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 30px;
+      height: 28px;
       z-index: 2;
-      background-color: #050508;
-      background-image: url('assets/greek-meander-dark-bronze.svg?v=conn3');
-      background-repeat: repeat-x;
-      background-size: 24px 30px; /* tighter connected keys */
+      background-color: #0a0608;
+      background-image: url('assets/greek-meander-dark-photo.png?v=photo1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center bottom;
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
@@ -890,8 +890,7 @@
     #atlas-greek-stage .greek-meander { display: none !important; }
 
     /* Atlas tool banner — under page Greek rail; NO Greek painted on the bar itself */
-    html[data-theme="light"] .top-nav,
-    html[data-theme="dark"] .top-nav {
+    html[data-theme="light"] .top-nav {
       background: linear-gradient(180deg, #12121f 0%, #050510 48%, #0c0c18 100%) !important;
       border: 1.5px solid rgba(197, 160, 89, 0.55) !important;
       box-shadow: 0 12px 32px rgba(0,0,0,0.45) !important;
@@ -900,6 +899,42 @@
       margin-bottom: 0 !important;
       position: relative;
       overflow: hidden !important;
+    }
+    /* Dark Atlas banner — exact photo purple→black horizontal fade */
+    html[data-theme="dark"] .top-nav {
+      background: linear-gradient(90deg,
+        #050014 0%,
+        #0C021D 10%,
+        #1A0A2F 32%,
+        #281040 50%,
+        #1A0A2F 68%,
+        #0C021D 90%,
+        #050014 100%) !important;
+      border: 1px solid rgba(40, 16, 64, 0.55) !important;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+      padding-top: 14px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      position: relative;
+      overflow: hidden !important;
+      border-radius: 0 !important;
+    }
+    /* Dark: ATLAS = silver metallic; Decision Engine = bronze (match photo) */
+    html[data-theme="dark"] .top-nav .brand-title {
+      background-image: linear-gradient(180deg, #f5f3f7 0%, #d8d4de 40%, #9a96a4 78%, #6e6a78 100%) !important;
+      background-size: 100% 100% !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.55)) !important;
+    }
+    html[data-theme="dark"] .top-nav .brand-sub span {
+      background-image: linear-gradient(180deg, #c9a070 0%, #a87840 40%, #7a5028 78%, #54301c 100%) !important;
+      background-size: 100% 100% !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.45)) !important;
     }
     html[data-theme="light"] .top-nav::before,
     html[data-theme="dark"] .top-nav::before,
