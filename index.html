@@ -822,26 +822,32 @@
     html[data-theme="light"] #atlas-greek-stage {
       display: block;
       background-color: #efe4d4;
-      background-image: url('assets/atlas-atm-light.jpg?v=atm3');
+      background-image: url('assets/atlas-atm-light.jpg?v=clear4');
     }
     html[data-theme="light"] #atlas-greek-stage::after {
-      background: radial-gradient(ellipse 55% 52% at 50% 46%, rgba(250,246,240,0.78) 0%, rgba(250,246,240,0.35) 55%, transparent 80%);
+      background: radial-gradient(ellipse 55% 52% at 50% 46%, rgba(250,246,240,0.55) 0%, rgba(250,246,240,0.22) 55%, transparent 80%);
     }
     html[data-theme="light"] body { background-color: #efe4d4; background-image: none; }
 
-    /* Greek rails — light unchanged; dark = tighter bronze-fade pattern only */
+    /*
+      Greek rails — crop from the clear reference photo (same pattern as the image).
+      No SVG redraw, no soft filters that blur the metal.
+    */
     html[data-theme="light"] #atlas-greek-stage::before {
       content: '';
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 30px;
+      height: 28px;
       z-index: 2;
-      background-color: #050510;
-      background-image: url('assets/greek-meander-navy-gold.svg?v=atm2');
-      background-repeat: repeat-x;
-      background-size: 80px 30px;
+      background-color: #0c0306;
+      background-image: url('assets/greek-meander-light-exact.png?v=clear4');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center top;
+      filter: none;
+      image-rendering: auto;
+      box-shadow: none;
     }
     html[data-theme="dark"] #atlas-greek-stage::before {
       content: '';
@@ -850,26 +856,28 @@
       left: 0; right: 0; top: 0;
       height: 28px;
       z-index: 2;
-      background-color: #36212A;
-      /* user photo pattern — smaller fit, sharpened bronze shine */
-      background-image: url('assets/greek-meander-user-exact.png?v=fit2');
+      background-color: #0c0306;
+      background-image: url('assets/greek-meander-light-exact.png?v=clear4');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center top;
-      filter: contrast(1.08) saturate(1.12) brightness(1.06);
-      box-shadow: 0 1px 0 rgba(230,166,118,0.35);
+      filter: none;
+      image-rendering: auto;
+      box-shadow: none;
     }
     html[data-theme="light"] .greek-meander-light-bottom {
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 30px;
+      height: 28px;
       z-index: 2;
-      background-color: #050510;
-      background-image: url('assets/greek-meander-navy-gold.svg?v=atm2');
-      background-repeat: repeat-x;
-      background-size: 80px 30px;
+      background-color: #0c0306;
+      background-image: url('assets/greek-meander-light-exact.png?v=clear4');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center bottom;
+      filter: none;
+      box-shadow: none;
     }
     html[data-theme="dark"] .greek-meander-dark-bottom {
       display: block !important;
@@ -877,13 +885,13 @@
       left: 0; right: 0; bottom: 0;
       height: 28px;
       z-index: 2;
-      background-color: #36212A;
-      background-image: url('assets/greek-meander-user-exact.png?v=fit2');
+      background-color: #0c0306;
+      background-image: url('assets/greek-meander-light-exact.png?v=clear4');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center bottom;
-      filter: contrast(1.08) saturate(1.12) brightness(1.06);
-      box-shadow: 0 -1px 0 rgba(230,166,118,0.35);
+      filter: none;
+      box-shadow: none;
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
     html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
