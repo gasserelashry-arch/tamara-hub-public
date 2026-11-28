@@ -821,16 +821,6 @@
       pointer-events: none;
     }
 
-    /* Dark: no full-page melting meander — Greek key is banner frame only */
-    html[data-theme="dark"] #atlas-greek-stage::before {
-      content: none !important;
-      display: none !important;
-    }
-    html[data-theme="dark"] .greek-meander-dark-bottom {
-      display: none !important;
-    }
-    html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
-
     /* Light mode: cream temple plate (approved model) */
     html[data-theme="light"] #atlas-greek-stage {
       display: block;
@@ -845,34 +835,38 @@
       background-color: #e8dcc8;
       background-image: none;
     }
-    /* Light Greek rails — crisp SVG, banner purple */
-    html[data-theme="light"] #atlas-greek-stage::before {
+    /* Upper + lower Greek banners — 100% match approved photo (dark navy + soft gold fade) */
+    html[data-theme="light"] #atlas-greek-stage::before,
+    html[data-theme="dark"] #atlas-greek-stage::before {
       content: '';
+      display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
       height: 32px;
       z-index: 2;
-      background-color: #5300BA;
-      background-image: url('assets/greek-meander-light.svg?v=hq1');
+      background-color: #050510;
+      background-image: url('assets/greek-meander-navy-gold.svg?v=exact1');
       background-repeat: repeat-x;
       background-size: 80px 32px;
       background-position: center top;
-      box-shadow: 0 4px 16px rgba(83, 0, 186, 0.28);
+      box-shadow: 0 4px 18px rgba(197, 160, 89, 0.18);
     }
-    html[data-theme="light"] .greek-meander-light-bottom {
+    html[data-theme="light"] .greek-meander-light-bottom,
+    html[data-theme="dark"] .greek-meander-dark-bottom {
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
       height: 32px;
       z-index: 2;
-      background-color: #5300BA;
-      background-image: url('assets/greek-meander-light.svg?v=hq1');
+      background-color: #050510;
+      background-image: url('assets/greek-meander-navy-gold.svg?v=exact1');
       background-repeat: repeat-x;
       background-size: 80px 32px;
       background-position: center bottom;
-      box-shadow: 0 -4px 16px rgba(83, 0, 186, 0.22);
+      box-shadow: 0 -4px 18px rgba(197, 160, 89, 0.16);
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
+    html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
 
     /* Light top banner — purple + crisp Greek pattern */
     html[data-theme="light"] .top-nav {

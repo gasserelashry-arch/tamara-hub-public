@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="32" viewBox="0 0 80 32">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="18%" stop-color="#0a0a18"/>
+      <stop offset="50%" stop-color="#12121f"/>
+      <stop offset="82%" stop-color="#0a0a18"/>
+      <stop offset="100%" stop-color="#050510"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B7355" stop-opacity="0.75"/>
+      <stop offset="35%" stop-color="#C5A059"/>
+      <stop offset="50%" stop-color="#D4B06A"/>
+      <stop offset="65%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#8B7355" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+  <rect width="80" height="32" fill="url(#fade)"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 8 H28 V24 H16 V16 H24 V14 H14 V26 H36 V8 H20"/>
+    <path d="M44 8 H68 V24 H56 V16 H64 V14 H54 V26 H76 V8 H60"/>
+  </g>
+  <rect x="0" y="0" width="80" height="1.5" fill="#C5A059" fill-opacity="0.55"/>
+  <rect x="0" y="30.5" width="80" height="1.5" fill="#C5A059" fill-opacity="0.55"/>
+</svg>
