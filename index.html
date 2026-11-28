@@ -848,18 +848,16 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 34px;
+      height: 50px;
       z-index: 2;
-      background-color: #08040c;
-      /* crisp vector meander — bright bronze metallic shine */
-      background-image:
-        linear-gradient(90deg, rgba(8,4,12,0.65) 0%, transparent 16%, transparent 84%, rgba(8,4,12,0.65) 100%),
-        url('assets/greek-meander-dark-bronze.svg?v=shine7');
-      background-repeat: no-repeat, repeat-x;
-      background-size: 100% 100%, 32px 34px;
-      background-position: center top, center top;
+      background-color: #36212A;
+      /* 100% exact user-provided Greek strip — no redraw */
+      background-image: url('assets/greek-meander-user-exact.png?v=user1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center top;
       filter: none;
-      box-shadow: 0 0 10px rgba(224,176,96,0.22), inset 0 1px 0 rgba(255,240,200,0.18);
+      box-shadow: none;
     }
     html[data-theme="light"] .greek-meander-light-bottom {
       display: block !important;
@@ -877,17 +875,15 @@
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 34px;
+      height: 50px;
       z-index: 2;
-      background-color: #08040c;
-      background-image:
-        linear-gradient(90deg, rgba(8,4,12,0.65) 0%, transparent 16%, transparent 84%, rgba(8,4,12,0.65) 100%),
-        url('assets/greek-meander-dark-bronze.svg?v=shine7');
-      background-repeat: no-repeat, repeat-x;
-      background-size: 100% 100%, 32px 34px;
-      background-position: center bottom, center bottom;
+      background-color: #36212A;
+      background-image: url('assets/greek-meander-user-exact.png?v=user1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center bottom;
       filter: none;
-      box-shadow: 0 0 10px rgba(224,176,96,0.22), inset 0 -1px 0 rgba(255,240,200,0.18);
+      box-shadow: none;
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
     html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
