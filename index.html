@@ -796,7 +796,7 @@
     }
     .container { max-width: 1480px; margin: 0 auto; position: relative; z-index: 1; }
 
-    /* === Greek stage — match approved light model + dark mauve frame === */
+    /* === Exact photo match v1 — light + dark plates from approved photos === */
     #atlas-greek-stage {
       position: fixed;
       inset: 0;
@@ -804,135 +804,114 @@
       pointer-events: none;
       overflow: hidden;
       background-color: #07030d;
-      background-image: url('assets/atlas-greek-option-b.jpg?v=topframe4');
+      background-image: url('assets/atlas-match-dark.jpg?v=m1');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
     }
-    html[data-theme="dark"] body {
-      background-color: #07030d;
-      background-image: none;
-    }
+    html[data-theme="dark"] body { background-color: #07030d; background-image: none; }
     #atlas-greek-stage::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 62% 58% at 50% 48%, rgba(7,3,13,0.55) 0%, rgba(7,3,13,0.22) 55%, transparent 78%);
+      background: radial-gradient(ellipse 58% 55% at 50% 48%, rgba(7,3,13,0.42) 0%, rgba(7,3,13,0.18) 50%, transparent 78%);
       pointer-events: none;
     }
 
-    /* Light mode: cream temple plate (approved model) */
     html[data-theme="light"] #atlas-greek-stage {
       display: block;
-      background-color: #e8dcc8;
-      background-image: url('assets/atlas-greek-option-light.jpg?v=model3');
+      background-color: #efe4d4;
+      background-image: url('assets/atlas-match-light.jpg?v=m1');
     }
     html[data-theme="light"] #atlas-greek-stage::after {
-      background:
-        radial-gradient(ellipse 72% 66% at 50% 46%, rgba(250,246,240,0.94) 0%, rgba(250,246,240,0.82) 40%, rgba(250,246,240,0.35) 68%, transparent 88%);
+      background: radial-gradient(ellipse 60% 58% at 50% 46%, rgba(250,246,240,0.72) 0%, rgba(250,246,240,0.35) 55%, transparent 82%);
     }
-    html[data-theme="light"] body {
-      background-color: #e8dcc8;
-      background-image: none;
-    }
-    /* Upper + lower Greek banners — 100% match approved photo (dark navy + soft gold fade) */
+    html[data-theme="light"] body { background-color: #efe4d4; background-image: none; }
+
+    /* Exact cropped Greek strips from photos (upper + lower) */
     html[data-theme="light"] #atlas-greek-stage::before,
     html[data-theme="dark"] #atlas-greek-stage::before {
       content: '';
       display: block !important;
       position: absolute;
       left: 0; right: 0; top: 0;
-      height: 32px;
+      height: 36px;
       z-index: 2;
       background-color: #050510;
-      background-image: url('assets/greek-meander-navy-gold.svg?v=exact1');
-      background-repeat: repeat-x;
-      background-size: 80px 32px;
+      background-image: url('assets/match-banner-dark-top.jpg?v=m1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center top;
-      box-shadow: 0 4px 18px rgba(197, 160, 89, 0.18);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+    html[data-theme="light"] #atlas-greek-stage::before {
+      background-image: url('assets/match-banner-light-top.jpg?v=m1');
     }
     html[data-theme="light"] .greek-meander-light-bottom,
     html[data-theme="dark"] .greek-meander-dark-bottom {
       display: block !important;
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 32px;
+      height: 36px;
       z-index: 2;
       background-color: #050510;
-      background-image: url('assets/greek-meander-navy-gold.svg?v=exact1');
-      background-repeat: repeat-x;
-      background-size: 80px 32px;
+      background-image: url('assets/match-banner-dark-bot.jpg?v=m1');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       background-position: center bottom;
-      box-shadow: 0 -4px 18px rgba(197, 160, 89, 0.16);
+    }
+    html[data-theme="light"] .greek-meander-light-bottom {
+      background-image: url('assets/match-banner-light-bot.jpg?v=m1');
     }
     html[data-theme="dark"] .greek-meander-light-bottom { display: none !important; }
     html[data-theme="light"] .greek-meander-dark-bottom { display: none !important; }
 
-    /* Light top banner — purple + crisp Greek pattern */
+    /* Light Atlas header — dark navy like photo 1 (gold branding sits on it) */
     html[data-theme="light"] .top-nav {
-      background:
-        url('assets/greek-meander-nav.svg?v=hq1') repeat-x top / 80px 16px,
-        linear-gradient(135deg, #3b0764 0%, #5300BA 42%, #6415C2 100%) !important;
-      border: 2px solid #8b5cf6 !important;
-      box-shadow: 0 10px 28px rgba(83, 0, 186, 0.32) !important;
+      background: linear-gradient(180deg, #0a0a18 0%, #050510 45%, #0c0c1a 100%) !important;
+      border: 1.5px solid rgba(197, 160, 89, 0.55) !important;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.28) !important;
+      padding-top: 14px !important;
     }
     html[data-theme="light"] .top-nav::before {
-      height: 3px !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      background: linear-gradient(90deg, #5300BA, #e9d5ff, #5300BA) !important;
-      opacity: 1;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      content: none !important;
+      display: none !important;
+      height: 0 !important;
     }
-    /* Dark mode ONLY — same purple banner as the approved light photo (exact fade + gold Greek frame on this banner only) */
+
+    /* Dark Atlas header — match photo 2 dark navy bar */
     html[data-theme="dark"] .top-nav {
-      background: linear-gradient(135deg, #3b0764 0%, #5300BA 45%, #6415C2 100%) !important;
-      border: 2px solid #d4af37 !important;
-      box-shadow: 0 10px 28px rgba(59, 7, 100, 0.45) !important;
-      padding-top: 22px !important;
+      background: linear-gradient(180deg, #0a0a18 0%, #050510 50%, #0c0c1a 100%) !important;
+      border: 1.5px solid rgba(197, 160, 89, 0.5) !important;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.55) !important;
+      padding-top: 14px !important;
       overflow: hidden;
       position: relative;
     }
     html[data-theme="dark"] .top-nav::before {
-      content: '' !important;
-      display: block !important;
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      height: 14px !important;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      background-color: #2a0850 !important;
-      background-image: url('assets/greek-meander-banner-gold.svg?v=panner1') !important;
-      background-repeat: repeat-x !important;
-      background-size: 64px 14px !important;
-      background-position: center top !important;
-      border: none !important;
-      border-bottom: 1px solid #d4af37 !important;
-      box-shadow: none !important;
-      opacity: 1 !important;
-      z-index: 3;
-      pointer-events: none;
+      content: none !important;
+      display: none !important;
+      height: 0 !important;
     }
 
-    /* Verification: lighter warm parchment (NOT blue/navy) — matches design, not same as marble */
+    /* Light verification — white card like photo 1; white framed steps */
     html[data-theme="light"] #gate-screen.gate-card {
-      background: linear-gradient(165deg, #f7f1e8 0%, #f0e6d8 55%, #ebe0d0 100%) !important;
-      border: 2.5px solid #6415C2 !important;
-      box-shadow: 0 16px 36px rgba(83, 0, 186, 0.16), inset 0 1px 0 rgba(255,255,255,0.85) !important;
+      background: #ffffff !important;
+      border: 2px solid #2a1a4a !important;
+      box-shadow: 0 16px 40px rgba(20, 10, 40, 0.18) !important;
       color: #1a120b !important;
       position: relative;
       z-index: 2;
     }
     html[data-theme="light"] #gate-screen .check-item {
-      background: #fffaf3 !important;
-      border: 1.5px solid #c4b5fd !important;
+      background: #ffffff !important;
+      border: 1.5px solid #4B365F !important;
       color: #1a120b !important;
+      box-shadow: 0 2px 8px rgba(20, 10, 40, 0.06);
     }
     html[data-theme="light"] #gate-screen .check-item:hover {
-      background: #f3e8ff !important;
-      border-color: #6415C2 !important;
+      background: #faf8f5 !important;
+      border-color: #2a1a4a !important;
     }
     html[data-theme="light"] #gate-screen h1,
     html[data-theme="light"] #gate-screen .check-item,
@@ -940,7 +919,7 @@
       color: #1a120b !important;
     }
     html[data-theme="light"] #gate-screen > span {
-      color: #6415C2 !important;
+      color: #3d2a1a !important;
       font-weight: 800;
     }
     html[data-theme="light"] #gate-screen [style*="color:var(--text-muted)"],
@@ -948,14 +927,37 @@
       color: #5b4636 !important;
     }
     html[data-theme="light"] #gate-screen .btn-gate-enter {
-      background: linear-gradient(135deg, #efe4d4, #e2d3bc) !important;
-      color: #3d2e22 !important;
-      border-color: #b8a48a !important;
+      background: linear-gradient(135deg, #e8dcc8, #d4c4a8) !important;
+      color: #1a120b !important;
+      border-color: #c5a059 !important;
     }
     html[data-theme="light"] #gate-screen .btn-gate-enter.ready,
     html[data-theme="light"] #gate-screen .btn-gate-enter:hover {
       background: linear-gradient(135deg, #d4af37, #aa8214) !important;
       color: #1a120b !important;
+    }
+
+    /* Dark verification — match photo 2 dark card + purple glow edge */
+    html[data-theme="dark"] #gate-screen.gate-card {
+      background: linear-gradient(165deg, #1a1a22 0%, #121218 100%) !important;
+      border: 2px solid #6d28d9 !important;
+      box-shadow: 0 0 24px rgba(109, 40, 217, 0.35), 0 16px 40px rgba(0,0,0,0.55) !important;
+      color: #f3f6fb !important;
+      z-index: 2;
+    }
+    html[data-theme="dark"] #gate-screen .check-item {
+      background: rgba(255,255,255,0.06) !important;
+      border: 1.5px solid rgba(197, 160, 89, 0.35) !important;
+      color: #f3f6fb !important;
+    }
+    html[data-theme="dark"] #gate-screen h1,
+    html[data-theme="dark"] #gate-screen .check-item,
+    html[data-theme="dark"] #gate-screen .check-item * {
+      color: #f3f6fb !important;
+    }
+    html[data-theme="dark"] #gate-screen > span {
+      color: #c5a059 !important;
+      font-weight: 800;
     }
 
     #atlas-greek-stage > *:not(.greek-meander-light-bottom):not(.greek-meander-dark-bottom) { display: none !important; }
