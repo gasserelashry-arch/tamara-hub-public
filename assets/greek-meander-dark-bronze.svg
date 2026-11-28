@@ -1,30 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 40 32">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 32 36">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a0610"/>
-      <stop offset="50%" stop-color="#120818"/>
-      <stop offset="100%" stop-color="#0a0610"/>
+      <stop offset="0%" stop-color="#08040c"/>
+      <stop offset="50%" stop-color="#140a18"/>
+      <stop offset="100%" stop-color="#08040c"/>
     </linearGradient>
-    <!-- vertical metallic shine on the bronze stroke (photo look) -->
+    <!-- bright metallic bronze shine (vertical bevel) -->
     <linearGradient id="br" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3a1c14"/>
-      <stop offset="18%" stop-color="#8a5230"/>
-      <stop offset="42%" stop-color="#d4a060"/>
-      <stop offset="50%" stop-color="#e8c078"/>
-      <stop offset="58%" stop-color="#d4a060"/>
-      <stop offset="82%" stop-color="#8a5230"/>
-      <stop offset="100%" stop-color="#3a1c14"/>
+      <stop offset="0%" stop-color="#2a140c"/>
+      <stop offset="12%" stop-color="#8a4e28"/>
+      <stop offset="28%" stop-color="#e0b060"/>
+      <stop offset="42%" stop-color="#f0d090"/>
+      <stop offset="50%" stop-color="#fff0c8"/>
+      <stop offset="58%" stop-color="#f0d090"/>
+      <stop offset="72%" stop-color="#e0b060"/>
+      <stop offset="88%" stop-color="#8a4e28"/>
+      <stop offset="100%" stop-color="#2a140c"/>
     </linearGradient>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="0.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="40" height="32" fill="url(#bg)"/>
-  <!--
-    Continuous Greek key (meander), seamless tile width=40.
-    Path enters at left on the top rail and exits at right on the top rail
-    so repeats connect with zero gap — same structure as the reference banner.
-  -->
-  <g fill="none" stroke="url(#br)" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
-    <path d="M0 6 H40"/>
-    <path d="M0 26 H40"/>
-    <path d="M0 6 H16 V24 H8 V14 H14 V12 H4 V26 H28 V6 H40"/>
+  <rect width="32" height="36" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#br)" stroke-width="2.85" stroke-linecap="square" stroke-linejoin="miter" filter="url(#glow)">
+    <!-- continuous rails -->
+    <path d="M0 5.5 H32"/>
+    <path d="M0 30.5 H32"/>
+    <!-- continuous connected Greek key — seamless at tile edges -->
+    <path d="M0 5.5 H13 V28.2 H6.5 V15.2 H11.2 V12.2 H3.8 V30.5 H22.5 V5.5 H32"/>
   </g>
 </svg>
