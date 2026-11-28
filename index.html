@@ -866,32 +866,48 @@
     #atlas-greek-stage .greek-veins,
     #atlas-greek-stage .greek-meander { display: none !important; }
 
-    /* Tool banner — dark navy like both references; gold edge frame */
+    /* Tool banner — navy bar; upper Greek on top edge only; lower Greek UNDER the bar (not on it) */
     html[data-theme="light"] .top-nav,
     html[data-theme="dark"] .top-nav {
       background:
-        url('assets/greek-meander-navy-gold.svg?v=atm2') repeat-x top / 80px 14px,
+        url('assets/greek-meander-navy-gold.svg?v=under1') repeat-x top / 80px 14px,
         linear-gradient(180deg, #12121f 0%, #050510 48%, #0c0c18 100%) !important;
       border: 1.5px solid rgba(197, 160, 89, 0.55) !important;
+      border-bottom: 1.5px solid rgba(197, 160, 89, 0.35) !important;
       box-shadow: 0 12px 32px rgba(0,0,0,0.45) !important;
       padding-top: 18px !important;
+      margin-bottom: 22px !important; /* room for lower Greek strip under the banner */
       position: relative;
-      overflow: hidden;
+      overflow: visible !important;
     }
+    /* remove any Greek painted on the bottom edge of the banner */
     html[data-theme="light"] .top-nav::before,
     html[data-theme="dark"] .top-nav::before {
+      content: none !important;
+      display: none !important;
+      height: 0 !important;
+      background: none !important;
+    }
+    /* lower Atlas Greek strip — sits RIGHT UNDER the banner, not overlapping it */
+    html[data-theme="light"] .top-nav::after,
+    html[data-theme="dark"] .top-nav::after {
       content: '' !important;
       display: block !important;
       position: absolute !important;
       left: 0 !important;
       right: 0 !important;
-      bottom: 0 !important;
-      top: auto !important;
-      height: 10px !important;
-      background: url('assets/greek-meander-navy-gold.svg?v=atm2') repeat-x bottom / 80px 10px !important;
-      border: none !important;
-      border-radius: 0 !important;
-      opacity: 0.95 !important;
+      top: calc(100% + 6px) !important; /* gap under banner, then Greek strip */
+      bottom: auto !important;
+      height: 14px !important;
+      border-radius: 6px;
+      background-color: #050510 !important;
+      background-image: url('assets/greek-meander-navy-gold.svg?v=under1') !important;
+      background-repeat: repeat-x !important;
+      background-size: 80px 14px !important;
+      background-position: center center !important;
+      border: 1px solid rgba(197, 160, 89, 0.4) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+      opacity: 1 !important;
       z-index: 2;
       pointer-events: none;
     }
